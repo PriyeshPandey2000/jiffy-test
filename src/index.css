@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-custom-sm {
+    font-size: 14px; /* Your custom font size for text-sm */
+}
+.text-custom-base {
+    font-size: 15px; /* Your custom font size for text-base */
+}
