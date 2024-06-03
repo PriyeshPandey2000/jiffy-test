@@ -90,7 +90,7 @@ function Navbar() {
               onClick={toggleDropdown}
             />
             {dropdownOpen && (
-              <div className="absolute text-sm font-semibold right-0 mt-12 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+              <div className="absolute text-sm font-semibold right-0 mt-12 w-48 bg-white rounded-md shadow-lg py-2 z-50 animate-fadeIn">
                 <a href="#" className="flex items-center  px-4 py-2 text-[#5A5A62] hover:bg-gray-200"><img src="/user.png" alt="Profile Icon" className="w-4 h-4 mr-2" />View profile</a>
                 <a href="#" className="flex items-center px-4 py-2 text-[#5A5A62] hover:bg-gray-200"><img src="/Dashboard.png" alt="Dashboard Icon" className="w-4 h-4 mr-2" />Dashboard</a>
                 <a href="#" className="flex items-center px-4 py-2 text-[#5A5A62] hover:bg-gray-200"><img src="/Code.png" alt="API Icon" className="w-4 h-4 mr-2" />API</a>

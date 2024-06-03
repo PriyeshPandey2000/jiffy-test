@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BountyCard from './BountyCard';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const WorkHistory = () => {
   const [activeTab, setActiveTab] = useState('Completed');
@@ -48,16 +49,16 @@ const WorkHistory = () => {
   ];
   const bountiesReview = [
     {
-      title: "Design ",
-      organization: { name: "Superteam", logo: "/superteam-logo.png" },
+      title: "Write a thread with memes for PP Program on Solana ",
+      organization: { name: "pSTAKE Finance", logo: "/pstake-logo.png" },
       date: "04/04/2023",
       participants: 36,
       prize: { amount: 700, currency: "USDC" },
       place: "1st Place",
-      tags: ["Design"]
+      tags: ["Content"]
     },
     {
-      title: "Armada ",
+      title: "Armada UI/UX Review ",
       organization: { name: "Dean's List Dao", logo: "/deanslist-logo.png" },
       date: "21/03/2023",
       participants: 7,
@@ -66,22 +67,22 @@ const WorkHistory = () => {
       tags: ["Design"]
     },
     {
-      title: "Create a Frame for Farcaster",
-      organization: { name: "Deribet", logo: "/deribet-logo.png" },
+      title: "Design Earn’s Talent Leaderboard",
+      organization: { name: "Superteam", logo: "/superteam-logo.png" },
       date: "14/03/2023",
       participants: 20,
       prize: { amount: 500, currency: "USDC" },
       place: "1st Place",
-      tags: ["Frontend", "Backend", "Blockchain"]
+      tags: ["Design"]
     },
     {
-      title: "Write a thread with memes for PP Program on Solana",
-      organization: { name: "pSTAKE Finance", logo: "/pstake-logo.png" },
+      title: "Create a Frame for Farcaster",
+      organization: { name: "Deribet", logo: "/deribet-logo.png" },
       date: "06/03/2023",
       participants: 12,
       prize: { amount: 100, currency: "USDC" },
       place: "3rd Place",
-      tags: ["Content"]
+      tags: ["Frontend", "Backend", "Blockchain"]
     }
   ];
   const renderBounties = () => {
@@ -145,7 +146,7 @@ const WorkHistory = () => {
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="px-4 py-2 border rounded-md text-blue-600 bg-white appearance-none text-sm pr-3 mr-1"
+            className="px-4 py-1 border rounded-md text-blue-600 bg-white appearance-none text-sm pr-3 mr-1 cursor-pointer"
             style={{
               backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' d='M0 0h20v20H0z'/><path fill='gray' d='M10 12l-4-4h8l-4 4z'/></svg>")`,
               backgroundRepeat: 'no-repeat',
@@ -183,7 +184,7 @@ const WorkHistory = () => {
       </div>
     </div>
     <div>
-    <div className="border-r border-gray-300 h-6/7 mt-8 "></div>
+    <div className="border-r border-gray-300 h-7/8 mt-8 "></div>
     </div>
     
 
@@ -193,7 +194,7 @@ const WorkHistory = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search Bounties, Profiles, and more..."
-              className="pl-11 pr-7 py-2 border rounded-full text-custom-base  text-[#5A5A62] mt-8 bg-gray-200 w-80"
+              className="pl-11 pr-7 py-2 border rounded-full text-sm  text-[#5A5A62] mt-8 bg-[#F1F5F9] w-72"
             />
             <img
               src="/search.png" // Replace this with your search.png path

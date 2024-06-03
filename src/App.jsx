@@ -51,7 +51,7 @@ function App() {
   ];
   const bountiesReview = [
     {
-      title: "Design ",
+      title: "Write a thread with memes for PP Program on Solana ",
       organization: { name: "Superteam", logo: "/superteam-logo.png" },
       date: "04/04/2023",
       participants: 36,
@@ -126,7 +126,7 @@ function App() {
     <Navbar/>
     
     
-     <div className="w-4/5 mx-auto">
+     <div className="w-6/7 mx-auto">
      <WorkHistory setActiveTab={setActiveTab}/>
      </div>
      {/* <div className="w-3/5 mx-auto">

@@ -2,12 +2,12 @@ import React from 'react';
 
 const BountyCard = ({ title, organization, date, participants, prize, place, tags }) => {
   return (
-    <div className="flex gap-5 justify-between px-8 py-5 bg-white rounded-lg max-md:flex-wrap max-md:px-5 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+    <div className="flex gap-5 justify-between px-6 py-5 bg-white rounded-lg max-md:flex-wrap max-md:px-5 hover:shadow-lg hover:scale-105 cursor-pointer transition duration-300 ease-in-out">
       <div className="flex gap-5 max-md:flex-wrap">
         <img
           loading="lazy"
           srcSet={organization.logo}
-          className="shrink-0 w-20 aspect-square"
+          className="shrink-0 w-16 aspect-square"
         />
         <div className="flex flex-col grow shrink-0 my-auto basis-0 w-fit max-md:max-w-full">
           <div className="flex gap-2 text-lg font-semibold leading-7 max-md:flex-wrap">
@@ -19,17 +19,17 @@ const BountyCard = ({ title, organization, date, participants, prize, place, tag
             </div>
             <div className="text-slate-400 text-lg font-semibold ">{organization.name}</div>
           </div>
-          <div className="flex gap-4 items-center pr-20 mt-3 max-md:flex-wrap max-md:pr-5">
+          <div className="flex gap-4 items-center pr-20 mt-1 max-md:flex-wrap max-md:pr-5">
             <div className="flex gap-1 items-center self-stretch whitespace-nowrap">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/5324a8e42ab2c1c3cf507052ed812255f587db6980b8776a75a99faf330b6cc0?"
-                className="shrink-0 self-stretch my-auto w-6 aspect-square"
+                className="shrink-0 self-stretch  w-6 aspect-square"
               />
-              <div className="self-stretch text-lg font-semibold leading-7 text-neutral-800 ">
+              <div className="self-stretch text-base font-semibold leading-7 text-neutral-800 ">
               {prize.amount} 
               </div>
-              <div className="self-stretch my-auto text-lg tracking-normal text-slate-400">
+              <div className="self-stretch  text-base leading-7 tracking-normal text-slate-400">
               {prize.currency}
               </div>
             </div>
@@ -49,7 +49,7 @@ const BountyCard = ({ title, organization, date, participants, prize, place, tag
             {tags.map((tag, index) => (
               <div
                 key={index}
-                className={`justify-center self-stretch px-3 py-1 my-auto text-xs tracking-normal leading-4 whitespace-nowrap rounded ${getTagColor(tag)}`}
+                className={`justify-center self-stretch px-3 py-1 my-auto text-xs tracking-normal leading-3 whitespace-nowrap rounded ${getTagColor(tag)}`}
               >
                 {tag}
               </div>
@@ -57,9 +57,9 @@ const BountyCard = ({ title, organization, date, participants, prize, place, tag
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center my-auto text-lg tracking-normal whitespace-nowrap">
-        <div className="text-slate-500">{date}</div>
-        <div className="flex gap-2 mt-4">
+      <div className="flex flex-col justify-center my-auto text-base tracking-normal whitespace-nowrap">
+        <div className="text-slate-500 ml-6">{date}</div>
+        <div className="flex gap-2 mt-3">
           <div className="text-right text-neutral-800">{participants}</div>
           <div className="text-slate-500">Participants</div>
         </div>
