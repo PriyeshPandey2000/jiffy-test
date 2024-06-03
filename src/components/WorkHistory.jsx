@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import BountyCard from './BountyCard';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { InReviewBountyCard } from './BountyCard';
+
+
 
 const WorkHistory = () => {
   const [activeTab, setActiveTab] = useState('Completed');
   const [filter, setFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
 
   const tabs = ['Completed', 'In Review'];
 
@@ -86,35 +89,37 @@ const WorkHistory = () => {
     }
   ];
   const renderBounties = () => {
-    if (activeTab === 'Completed') {
-      return bounties.map((bounty, index) => (
-        <BountyCard
-          key={index}
-          title={bounty.title}
-          organization={bounty.organization}
-          date={bounty.date}
-          participants={bounty.participants}
-          prize={bounty.prize}
-          place={bounty.place}
-          tags={bounty.tags}
-        />
-      ));
-    } else if (activeTab === 'In Review') {
-      return bountiesReview.map((bounty, index) => (
-        <BountyCard
-          key={index}
-          title={bounty.title}
-          organization={bounty.organization}
-          date={bounty.date}
-          participants={bounty.participants}
-          prize={bounty.prize}
-          place={bounty.place}
-          tags={bounty.tags}
-        />
-      ));
-    }
-    return null;
+    const selectedBounties = activeTab === 'Completed' ? bounties : bountiesReview;
+    return selectedBounties.map((bounty, index) => {
+      if (activeTab === 'Completed') {
+        return (
+          <BountyCard
+            key={index}
+            title={bounty.title}
+            organization={bounty.organization}
+            date={bounty.date}
+            participants={bounty.participants}
+            prize={bounty.prize}
+            place={bounty.place}
+            tags={bounty.tags}
+          />
+        );
+      } else {
+        return (
+          
+          <InReviewBountyCard
+            key={index}
+            title={bounty.title}
+            organization={bounty.organization}
+            date={bounty.date}
+            participants={bounty.participants}
+            tags={bounty.tags}
+          />
+        );
+      }
+    });
   };
+  
   // const renderedBounties = renderBounties();
 
   return (
@@ -129,7 +134,7 @@ const WorkHistory = () => {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`cursor-pointer pb-4 mt-4 ${
-                activeTab === tab ? 'border-b-2 border-blue-600 text-black text-custom-base items-center ' : 'text-gray-600 text-custom-base items-center'
+                activeTab === tab ? 'tab-item border-b-2 border-blue-600 text-black text-custom-base items-center ' : 'text-gray-600 text-custom-base items-center'
               }`}
             >
               {tab}
@@ -154,6 +159,7 @@ const WorkHistory = () => {
               backgroundSize: '1.5em',
               marginLeft:3
             }}
+            
           >
             <option value="All" className="text-[#6366F1]">Design</option>
             <option value="Design" className="text-[#6366F1]">Frontend</option>
@@ -161,6 +167,7 @@ const WorkHistory = () => {
             <option value="Content" className="text-[#6366F1]">Blockchain</option>
             <option value="Content" className="text-[#6366F1]">Content</option>
           </select>
+          
           {/* Search component */}
           {/* <div className="relative">
             <input
@@ -180,7 +187,13 @@ const WorkHistory = () => {
       </div>
       {/* Placeholder for tab content */}
       <div className="pt-4 ">
-      {renderBounties()}
+
+      {tabs.map((tab) => (
+            <div key={tab} className={`tab-content ${activeTab === tab ? 'active' : ''}`}>
+              {activeTab === tab && renderBounties()}
+            </div>
+          ))}
+
       </div>
     </div>
     <div>

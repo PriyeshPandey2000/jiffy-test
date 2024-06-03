@@ -12,15 +12,15 @@ function Navbar() {
   return (
     <div className="flex justify-center items-center px-8 py-3 bg-white max-md:px-5">
       <div className="flex gap-5 items-start w-60vw max-md:flex-wrap max-md:max-w-full mx-7">
-        <div className="flex flex-auto gap-5 justify-between items-center max-md:flex-wrap max-md:max-w-full">
+        <div className="flex flex-auto gap-5 justify-between items-center max-md:flex-wrap max-md:max-w-full cursor-pointer">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee64d4544426ece2f17063c5f7acffa3bde7bb66030d08a49a7250f6f9b5ceac?"
             className="shrink-0 self-stretch my-auto max-w-full aspect-[6] w-[180px]"
           />
           <div className="flex gap-5 justify-between self-stretch my-auto text-custom-sm leading-8 text-zinc-600 max-md:flex-wrap">
-            <div>Home</div>
-            <div className="flex gap-1 whitespace-nowrap">
+            <div className="cursor-pointer">Home</div>
+            <div className="flex gap-1 whitespace-nowrap cursor-pointer">
               <div>Blockchain</div>
               <img
                 loading="lazy"
@@ -28,7 +28,7 @@ function Navbar() {
                 className="shrink-0 my-auto w-6 aspect-square"
               />
             </div>
-            <div className="flex gap-1 whitespace-nowrap">
+            <div className="flex gap-1 whitespace-nowrap cursor-pointer">
               <div>Developers</div>
               <img
                 loading="lazy"
@@ -36,7 +36,7 @@ function Navbar() {
                 className="shrink-0 my-auto w-6 aspect-square"
               />
             </div>
-            <div className="flex gap-1 whitespace-nowrap">
+            <div className="flex gap-1 whitespace-nowrap cursor-pointer">
               <div>More</div>
               <img
                 loading="lazy"
@@ -44,7 +44,7 @@ function Navbar() {
                 className="shrink-0 my-auto w-6 aspect-square"
               />
             </div>
-            <div>About 4337</div>
+            <div className="cursor-pointer">About 4337</div>
           </div>
           <div className="flex flex-col justify-center self-stretch px-6 py-0 bg-white border-2 border-gray-300 border-solid rounded-[40px] max-md:px-5 relative">
             <div className="flex gap-4 justify-between">
