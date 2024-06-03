@@ -143,9 +143,9 @@ const WorkHistory = () => {
         </div>
         <div className="flex items-center gap-4">
           
-          {/* Filter component */}
+          
           {/* <div className="flex items-center gap-2"> */}
-            <img src="/filter.png" alt="Filter Icon" className="h-4 w-5" /> {/* Placeholder icon */}
+            <img src="/filter.png" alt="Filter Icon" className="h-4 w-5" /> 
             <span className="text-gray-500 text-custom-base">Filter By</span>
           {/* </div> */}
           <select

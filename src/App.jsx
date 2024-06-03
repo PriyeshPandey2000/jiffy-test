@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import BountyCard from './components/BountyCard';
 import WorkHistory from './components/WorkHistory';
 
-// import superteamLogo from './assets/superteam-logo.png';
+
 
 function App() {
   
@@ -116,7 +116,7 @@ function App() {
   //     />
   //     ));
   //   }
-  //   // Render nothing if the active tab is not 'Completed' or 'In Review'
+  //   
   //   return null;
   // };
 
